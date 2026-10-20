@@ -26,3 +26,34 @@ public class Factura {
     public String obtenerDescripcionPieza() {
         return descripcionPieza;
     }
+
+    public void establecerCantidad(int cantidad) {
+        // si no es positiva se deja en 0
+        if (cantidad > 0) {
+            this.cantidad = cantidad;
+        } else {
+            this.cantidad = 0;
+        }
+    }
+
+    public int obtenerCantidad() {
+        return cantidad;
+    }
+
+    public void establecerPrecioPorArticulo(double precioPorArticulo) {
+        // si no es positivo se deja en 0.0
+        if (precioPorArticulo > 0) {
+            this.precioPorArticulo = precioPorArticulo;
+        } else {
+            this.precioPorArticulo = 0.0;
+        }
+    }
+
+    public double obtenerPrecioPorArticulo() {
+        return precioPorArticulo;
+    }
+
+    public double obtenerMontoFactura() {
+        return cantidad * precioPorArticulo;
+    }
+}
